@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<aiml version = '1.0.1' encoding = 'UTF-8'>
+  <category>
+    <pattern>Sil vous plait donnez moi le mots.</pattern>
+    <template>[  lez demeure vert ] [ es oublier hente ]
+      <system>ruby create.rb; ruby think.rb</system>
+    </template>
+  </category>
+</aiml>
