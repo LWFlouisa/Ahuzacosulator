@@ -1,6 +1,6 @@
 require 'programr'
 
-brains = Dir.glob("_imaginedpath/brains/*")
+brains = Dir.glob("_aiml/*")
 
 robot = ProgramR::Facade.new
 robot.learn(brains)
