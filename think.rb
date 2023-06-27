@@ -28,6 +28,8 @@ grammar.train(:nonsense, "[ es oublier hente ] [  lez zigner braun ]", "nonsense
 grammar.train(:nonsense, "[ es oublier hente ] [   lez zigner vert ]", "nonsense")
 grammar.train(:nonsense, "[ es oublier hente ] [   lez zigner gris ]", "nonsense")
 
+puts "\n"
+
 new_phrase = File.readlines("_imaginedpath/outcomes/input.txt")
 
 row = 0
@@ -39,10 +41,12 @@ iteration.times do
 
   first_label        = result[0]
   first_probability  = result[1]
-  second_label       = "non#{first_label}"
-  second_probability = first_probability / 100
 
-  puts "#{first_label}: #{first_probability} #{second_label}: #{second_probability}"
+  puts "Charlotte << This statement in Francais makes #{first_label} with a probability of #{first_probability}."
+
+  open("_longterm/memory/statements.txt", "a") { |f|
+    f.puts "[ This statement in Francais makes #{first_label} with a probability of #{first_probability}. ]"
+  } 
 
   row = row + 1
 end
